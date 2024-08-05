@@ -40,7 +40,7 @@ class InverseAutoregressiveFlow(FlowArchitecture):
             self.num_blocks * [self.hidden_features],
             nonlinearity=self.activation,
         )
-        return ConditionalAffineAutoregressive(arn)
+        return ConditionalAffineAutoregressive(arn).inv
 
     def distribution(self):
         """Returns the base distribution for the flow"""
